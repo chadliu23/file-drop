@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>file-drop Demo</title>
 
-  <script src="../webcomponentsjs/webcomponents.min.js"></script>
-  <link rel="import" href="file-drop.html">
+  <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../file-drop.html">
   
 </head>
 <body unresolved>
@@ -24,18 +24,17 @@
 
   </style>
   <p>An example of using <code>&lt;file-drop&gt;</code>:</p>
-
-  <template id="auto-bind" is="auto-binding">
-  <file-drop on-file-dropped={{onFileDropped}}"">
-    <h2>drop file here</h2>
-  </file-drop>
-  <h2>Dropped file:</h2>
-  <div id='filenames'></div>
-  </template>
+    <template id="auto-bind" is="dom-bind">
+    <file-drop  on-file-dropped="fileDropped">
+      <h2>drop file here</h2>
+    </file-drop>
+    <h2>Dropped file:</h2>
+    <div id='filenames'></div>
+    </template>
   <script>
-    var autoBind= document.querySelector('#auto-bind');
-    autoBind.onFileDropped = function(e){
-        var filenames = document.getElementById('filenames');
+    var autoBind = document.querySelector('#auto-bind');
+    autoBind.fileDropped = function(e){
+      var filenames = document.getElementById('filenames');
         filenames.innerHTML = '';
         for (var i = 0, file; file = e.detail.files[i]; i++) {
               filenames.innerHTML += file.name + '<br/>';

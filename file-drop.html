@@ -16,7 +16,7 @@ Element providing file drop event notify.
 @status alpha
 @homepage http://chadliu23.github.io/file-drop
 -->
-<polymer-element name="file-drop" attributes="">
+<dom-module id="file-drop">
 
   <template>
   <content></content>
@@ -25,6 +25,15 @@ Element providing file drop event notify.
   <script>
 
     Polymer({
+
+      is: "file-drop",
+      /**
+       * The `file-dropped` event is fired whenever file dropped inside
+       * <file-drop> element.
+       *
+       * @event file-dropped
+       * @detail {{files: Files}}
+       */
       ready: function(){
         this.ondragover = function (e) {
             e.stopPropagation();
@@ -50,16 +59,9 @@ Element providing file drop event notify.
           }
       },
 
-      /**
-       * The `file-dropped` event is fired whenever file dropped inside
-       * <file-drop> element.
-       *
-       * @event file-dropped
-       * @param {Object} detail
-       *   @param {array} detail.files 
-       */
+
     });
 
   </script>
 
-</polymer-element>
+</dom-module>

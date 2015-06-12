@@ -1,6 +1,6 @@
 {
   "name": "file-drop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Chad Liu <chadliu23@gmail.com>"
   ],
@@ -17,12 +17,14 @@
   "homepage": "https://github.com/chadliu23/file-drop/",
   "ignore": [
     "/.*",
-    "/tests/"
+    "/tests/",
+    "/demo/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.2"
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^2.0.5"
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
   }
 }
